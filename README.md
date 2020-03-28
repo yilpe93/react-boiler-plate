@@ -1,0 +1,3 @@
+```bash
+$ git rm --cacheed
+```
