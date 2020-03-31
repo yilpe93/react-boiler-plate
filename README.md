@@ -1,4 +1,4 @@
-# Boiler-Plate
+# Boilerplate
 
 ## Server
 
@@ -20,7 +20,23 @@
   $ npx create-react-app .
   ```
 
--
+- CRA Boilerplate
+
+  ```
+  ┌ src
+  ├─ _actions
+  ├─ _reducers  => Redux를 위한 폴더
+  ├─ components/views => Page 구성
+  ├─ components/views/Sections => 해당 페이지 관련 css파일이나, component 구성
+  ├─ App.js
+  ├─ Config.js => 환경 변수같은 것을 설정
+  ├─ hoc => Hight Order Component 구성
+  └─ utils => 어디서든 쓸 수 있는 것들로 구성
+  ```
+
+- React Router Dom
+- Data Flow & Axios
+- CORS 이슈, Proxy 설정
 
 <!--
 
