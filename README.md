@@ -1,3 +1,29 @@
+# Boiler-Plate
+
+## Server
+
+- Node.js 와 Express.js 설치
+- MongoDB 연동
+- MongoDB Model & Schema 설정 (Mongoose)
+- 회원가입 API 생성
+- process.env.NODE_ENV 설정
+- Bcrypt로 비밀번호 암호화
+- 로그인 API 생성(jsonwebtoken)
+- 인증(authentication) API 생성
+- 로그아웃 API 생성
+
+## Front
+
+- CRA(Create-React-App)
+
+  ```bash
+  $ npx create-react-app .
+  ```
+
+-
+
+<!--
+
 ```bash
 $ git rm --cacheed
 ```
@@ -92,3 +118,5 @@ $ db.test.update({"name": "Han"}, { $set: {"age": 30}}) # name이 'Han'이라면
 # Document Delete, db.[collectionName].remove(조건절)
 $ db.test.remove({"name": "Lee"})
 ```
+
+-->
