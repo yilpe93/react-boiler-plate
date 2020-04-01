@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_action";
+import { withRouter } from "react-router-dom";
 
 function LoginPage(props) {
   const dispatch = useDispatch();
@@ -11,9 +12,16 @@ function LoginPage(props) {
   const onEmailHandler = e => {
     setEmail(e.currentTarget.value);
   };
+
   const onPasswordHandler = e => {
     setPassword(e.currentTarget.value);
   };
+
+  const onRegisterHandler = e => {
+    e.preventDefault();
+    props.history.push("/register");
+  };
+
   const onSubmitHandler = e => {
     e.preventDefault();
 
@@ -54,10 +62,19 @@ function LoginPage(props) {
           onChange={onPasswordHandler}
         ></input>
         <br />
-        <button>Login</button>
+        <div
+          style={{
+            margin: "0 auto"
+          }}
+        >
+          <button>Login</button>
+          <button style={{ marginLeft: "10px" }} onClick={onRegisterHandler}>
+            Register
+          </button>
+        </div>
       </form>
     </div>
   );
 }
 
-export default LoginPage;
+export default withRouter(LoginPage);
