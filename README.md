@@ -38,10 +38,84 @@
 - Data Flow & Axios
 - CORS 이슈, Proxy 설정
 
+  ```bash
+  $ npm i http-proxy-middleware
+  ```
+
+  **src/setUpProxy.js**
+
+  ```js
+  const { createProxyMiddleware } = require("http-proxy-middleware");
+
+  module.exports = function(app) {
+    app.use(
+      "/api",
+      createProxyMiddleware({
+        target: "http://localhost:5000",
+        changeOrigin: true
+      })
+    );
+  };
+  ```
+
+  **package.json**
+
+  ```json
+  {
+    ...
+    "proxy": "http://localhost:5000"
+  }
+  ```
+
+  **Proxy Server**
+
+  - IP를 Proxy Server에서 임의로 바꿀수 있다.
+  - 보내는 데이터를 임의로 바꿀수 있다.
+
+  1. 방화벽 기능
+  2. 웹 필터 기능
+  3. 캐쉬 데이터, 공유 데이터 제공 기능
+
+- Concurrently
+
+  ```bash
+  $ npm install concurrently
+  ```
+
+  **Package.json Script**
+
+  ```json
+  "dev": "concurrently \"npm run start\" \"npm run start --prefix client\"",
+  ```
+
+- Props / State
+- Redux
+
+  ```bash
+  # Redux | Redux Middleware
+  $ npm i redux react-redux redux-promise redux-thunk
+  ```
+
+- React Component
+
+  **Class Component**
+
+  - Provide more features
+  - Longer Code
+  - More Complex Code
+  - Slower Performance
+
+  **Functional Component**
+
+  - Provide less features
+  - Shoter Code
+  - Simple Code
+  - Faster Performance
+
 <!--
 
 ```bash
-$ git rm --cacheed
+$ git rm --cached
 ```
 
 ## SSH Key 생성
